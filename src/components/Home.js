@@ -1,41 +1,45 @@
 import React from "react";
-import styled from "styled-components";
+import { data } from "../utils/home-elements";
 import { Link } from "react-router-dom";
+import styled, { keyframes } from "styled-components";
+import { fadeInUp } from "react-animations";
 
-const Styledimg = styled.img`
-    border-radius: 4.75% / 3.5%;
-    width: 336px;
-    height: 468px;
-`
+const fadeAnimation = keyframes`${fadeInUp}`;
 
-const Styleddiv = styled.div`
-    display: flex;
-    margin: auto;
-    flex-direction: row-reverse;
-    max-width: 50%;
-
-    p {
-        color: white;
-        margin: auto;
-        border: double thistle;
-        margin-right: 5rem;
-        flex: none;
+const StyledPromo = styled.div`
+    .a{
+        animation: 2s ${fadeAnimation} ease-in; 
+    }
+    .b{
+        animation: 2s ${fadeAnimation} ease-in; 
+        animation-delay: 500ms;
+        animation-fill-mode: both;
     }
 
-    .content {
-        width: 30rem;
+    .c{
+        animation: 2s ${fadeAnimation} ease-in; 
+        animation-delay: 800ms;
+        animation-fill-mode: both;
     }
-`
+    
+`;
 
 const Home = () => {
     return(
-        <div className="outer">
-            <Link to='/cards'><button className="button-17">Start browsing</button></Link>
-            <h2>Explore the artwork of Magic's most iconic</h2>
-            <Styleddiv className="inner">
-                <Styledimg src="https://cards.scryfall.io/normal/front/9/1/9125f141-ee2c-4b9f-b9c1-9b9a779002d2.jpg?1666655519"></Styledimg>
-                <p className="content">In this page, we'll explore the many artworks of Rebecca Guay. One of my personal favorite artists. From ˻Abundance˺ to ˻Bitterblossom˺, this is her collection.</p>
-            </Styleddiv>
+        <div className="home-outer">
+            <h2>{data.heading}</h2>
+            <div className="home-inner">
+                <div className="description">
+                    <p className="content">{data.message}</p>
+                    <p className='content'>{data.message2}</p>
+                </div>
+                <Link to='/cards'><button className="button-17">Start browsing</button></Link>
+                <StyledPromo className="promo">
+                    <img src={data.image1} className="home-card a"></img>
+                    <img src={data.image2} className="home-card b"></img>
+                    <img src={data.image3} className="home-card c"></img>
+                </StyledPromo>
+            </div>
         </div>
     )
 }

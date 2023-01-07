@@ -1,13 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import '../App.css'
 
 
 
 const Header = (props) => {
+    const navigate = useNavigate();
 
     return (
-        <div>
-            <h1>This is Rebecca Guay</h1>
-        </div>
+        <header>
+            <h1 onClick={() => navigate('/')}>This is Rebecca Guay</h1>
+        </header>
     )
 }
 
