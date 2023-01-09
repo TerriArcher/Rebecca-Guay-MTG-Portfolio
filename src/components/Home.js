@@ -1,10 +1,10 @@
 import React from "react";
 import { data } from "../utils/home-elements";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
-import { fadeInUp } from "react-animations";
+import { fadeIn } from "react-animations";
 
-const fadeAnimation = keyframes`${fadeInUp}`;
+const fadeAnimation = keyframes`${fadeIn}`;
 
 const StyledPromo = styled.div`
     .a{
@@ -25,20 +25,28 @@ const StyledPromo = styled.div`
 `;
 
 const Home = () => {
+    const navigate = useNavigate();
+
     return(
         <div className="home-outer">
-            <h2>{data.heading}</h2>
+           <div className="home-heading" onClick={() => navigate('/cards')}>
+                <img src="/icons/mana/white-mana.png" alt="white mana"/><img src="/icons/mana/colorless-mana.png" alt="colorless mana"/><img src="/icons/mana/black-mana.png" alt="black mana"/>
+                <h2>{data.heading}</h2>
+                <img src="/icons/mana/blue-mana.png" alt="blue mana"/><img src="/icons/mana/red-mana.png" alt="red mana"/><img src="/icons/mana/green-mana.png" alt="green mana"/>
+            </div>
+            
             <div className="home-inner">
-                <div className="description">
-                    <p className="content">{data.message}</p>
-                    <p className='content'>{data.message2}</p>
+                <div className="info">
+                    <div className="description">
+                        <h4 className="content">{data.message}</h4>
+                        <p className='content'>{data.message2}</p>
+                    </div>
+                    <StyledPromo className="promo">
+                        <img src={data.image2} className="home-card b" alt="Elspeth, Sun's Champion MTG card"></img>
+                        <img src={data.image1} className="home-card a" alt="Abundance MTG card"></img>
+                        <img src={data.image3} className="home-card c" alt="Hair-Strung Koto MTG card"></img>
+                    </StyledPromo>
                 </div>
-                <Link to='/cards'><button className="button-17">Start browsing</button></Link>
-                <StyledPromo className="promo">
-                    <img src={data.image1} className="home-card a"></img>
-                    <img src={data.image2} className="home-card b"></img>
-                    <img src={data.image3} className="home-card c"></img>
-                </StyledPromo>
             </div>
         </div>
     )

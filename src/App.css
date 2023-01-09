@@ -2,22 +2,11 @@
   text-align: center;
 }
 
-.row {
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 3rem;
-}
-
-.row div {
-  margin: 1rem;
-}
-
 h1 {
   width: 30rem;
-  margin: 0 auto;
 }
 
-header h1{
+header h1, .home-heading{
   text-decoration: none;
   font-family: 'Cinzel', serif;
 }
@@ -34,6 +23,129 @@ header h1{
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.header-wrapper {
+  max-width: 1920px;
+  padding-top: 20px;
+  position: relative;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  text-align: justify;
+  max-width: 100%;
+  position: relative;
+  margin: 0 3.5rem;
+  border-bottom: medium groove black;
+}
+
+header h1{
+  margin-right: auto;
+}
+
+header a{
+  display: inline-block;
+  margin: 0 0.75rem;
+  padding-top: 20px;
+  position: relative;
+}
+
+.home-outer{
+  padding-top: 10px;
+  /* background-color: #79868f; */
+}
+
+.home-heading{
+  border: medium solid black;
+  border-radius: 50px;
+  margin: 1rem;
+  padding: 0.75rem;
+  width: 40rem;
+  position: relative;
+  min-width: 40rem;
+  display: inline-block;
+
+}
+
+.home-heading::after{
+  padding: 0.75rem;
+  content: "";
+  background-image: url("/public/piper.jpg");
+  background-repeat: no-repeat;
+  background-position: 0px -50px;
+  background-size: cover;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;  
+  border-radius: 50px;
+}
+
+.home-heading h2{
+  text-shadow: #FC0 1px 0 10px;
+}
+
+.home-heading{
+  box-shadow: black 1px 0 10px;
+}
+
+.home-heading:hover{
+  box-shadow: none;
+}
+
+.home-heading:active{
+  box-shadow: #FC0 1px 0 10px;
+}
+
+.home-heading img{
+  margin: 0 0.10rem;
+}
+
+.info{
+  display: flex;
+  flex-direction: row;
+}
+
+.description{
+  color: #ffdead;
+  text-shadow: gray 1px 0 10px;
+  box-sizing: border-box;
+  width: 40rem;
+  height: 25rem;
+  margin: 5rem;
+  top: 4rem;
+  margin-right: auto;
+  border: black medium double;
+  padding: 3rem;
+  box-shadow: black 1px 0 10px;
+  position: relative;
+  line-height: 2rem;
+  max-height: 25rem;
+  max-width: 40rem;
+  min-width: 35rem;
+}
+
+.description::after{
+  content: "";
+  background-image: url("/public/enchantress.jpg");
+  background-repeat: no-repeat;
+  /* background-position: 0px -50px; */
+  background-size: cover;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;  
 }
 
 
