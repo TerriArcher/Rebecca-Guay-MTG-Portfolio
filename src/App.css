@@ -147,5 +147,8 @@ header a{
   position: absolute;
   z-index: -1;  
 }
-
+.home-header{
+  font-family: 'Cinzel', serif;
+  text-shadow: rgba(255, 204, 0, 0.534) 1px 0 10px
+}
 
