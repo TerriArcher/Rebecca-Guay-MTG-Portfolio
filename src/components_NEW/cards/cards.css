@@ -1,0 +1,53 @@
+.loading-container{
+    width: auto;
+    height: 150rem;
+}
+
+.display-container{
+    margin-top: 5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bottom-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.stray{
+    display: flex;
+    justify-content: center;
+}
+
+/* ADJUSTING ORIENTATION & POSITION */
+
+/* LEFT SIDE ADJUST */
+.card-0, .card-2{
+    transform: rotate(-25deg);
+}
+
+/* RIGHT SIDE ADJUST */
+.card-1, .card-3{
+    transform: rotate(25deg);
+}
+
+/* BOTTOM * STRAY OFFSET */
+.bottom-row{
+    position: relative;
+    bottom: 3rem;
+}
+
+.stray{
+    position: relative;
+    bottom: 6rem;
+}
+
+/* CARD FLIP MECHANIC */

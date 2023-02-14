@@ -1,14 +1,10 @@
-.App {
+
+/* .App {
   text-align: center;
 }
 
 h1 {
   width: 30rem;
-}
-
-header h1, .home-heading{
-  text-decoration: none;
-  font-family: 'Cinzel', serif;
 }
 
 .home-card {
@@ -42,7 +38,9 @@ header{
   position: relative;
   margin: 0 3.5rem;
   border-bottom: medium groove black;
+  font-family: 'Cinzel', serif;
 }
+
 
 header h1{
   margin-right: auto;
@@ -57,7 +55,6 @@ header a{
 
 .home-outer{
   padding-top: 10px;
-  /* background-color: #79868f; */
 }
 
 .home-heading{
@@ -137,7 +134,6 @@ header a{
   content: "";
   background-image: url("/public/enchantress.jpg");
   background-repeat: no-repeat;
-  /* background-position: 0px -50px; */
   background-size: cover;
   opacity: 0.5;
   top: 0;
@@ -151,4 +147,4 @@ header a{
   font-family: 'Cinzel', serif;
   text-shadow: rgba(255, 204, 0, 0.534) 1px 0 10px
 }
-
+ */
