@@ -29,8 +29,7 @@ const Cards = (props) => {
         finalData['row1'] = [cards[0], cards[1]]
         finalData['row2'] = [cards[2], cards[3]]
         finalData['stray'] = [cards[4]]
-        props.setCards(finalData);
-        setTimeout(console.log(props.displayCards), 2)
+        setTimeout(props.setCards(finalData),5);
     }
 
     useEffect(() => {
