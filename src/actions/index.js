@@ -7,7 +7,6 @@ export const SET_CARDS = "SET_CARDS"
 export const TESTING = "TESTING"
 
 export const getCards = () => dispatch => {
-    console.log('OH NO!')
     dispatch({ type: GET_CARDS_START })
     axios.get('https://api.scryfall.com/cards/search?q=a%3A"rebecca+guay"')
         .then(({ data }) => {

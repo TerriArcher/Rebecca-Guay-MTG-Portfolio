@@ -37,13 +37,11 @@ const cardReducer = (state = initialState, action) => {
                 error: action.payload
             }
         case SET_CARDS:
-            console.log(action.payload)
             return{
                 ...state,
                 displayCards: action.payload
             }
         case TESTING:
-            console.log('testing')
             return{
                 ...state
             }

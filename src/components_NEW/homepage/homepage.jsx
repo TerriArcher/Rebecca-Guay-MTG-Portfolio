@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 export default function Home () {
     const navigate = useNavigate();
 
+
     const iconRow1 = [
         "/icons/mana/black-mana.png",
         "/icons/mana/colorless-mana.png",

@@ -1,47 +1,35 @@
 /* eslint-disable */
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { getCards, setCards } from "../../actions";
+import React, { useEffect } from "react"
 import "./cards.css"
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import { connect } from "react-redux";
+import { setCards } from "../../actions";
 
-const Cards = (props) => {
-
-    console.log(props.library)
-
-    if (!props.cards.length) {
-        useEffect(() => {
-            props.getCards()
-        }, [])
+const mapStateToProps = function (state) {
+    const displayCards = state.card.displayCards
+    return {
+        displayCards,
     }
+}
 
-    function shuffler(arr) {
-        if (arr.length === 0) {
-            console.log('array empty!')
-            return
-        }
-        let temp = [...arr]
-        let finalData = []
-        let cards = temp.sort(() => Math.random() - Math.random()).slice(0, 5)
 
-        finalData['row1'] = [cards[0], cards[1]]
-        finalData['row2'] = [cards[2], cards[3]]
-        finalData['stray'] = [cards[4]]
-        setTimeout(props.setCards(finalData),5);
-    }
+
+
+const DisplayCards = (props) => {
+    const { cards, shuffler } = props
 
     useEffect(() => {
-        shuffler(props.cards)
-    }, [props.library])
-
-
-
-    return (
+        if(!props.displayCards.row1){
+            shuffler(cards)
+        }
+    }, [])
+    return(
         <>
-            {props.displayCards.row1 ?
-                <Container className="display-container">
+        {props.displayCards.row1 ? 
+
+        <Container className="display-container">
                     <Row className="top-row">
                         {props.displayCards.row1.map((card, idx) => {
                             return (
@@ -88,25 +76,12 @@ const Cards = (props) => {
                         })}
                     </Row>
                 </Container>
-                :
-                <div className="loading-container">
-                    <h1>You have no cards</h1>
-                </div>
-            }
-        </>
+        :
+        <></>}
+                </>
     )
 }
 
-const mapStateToProps = function (state) {
-    const displayCards = state.card.displayCards
-    const cards = state.card.cards
-    const library = state.card.libraryLoaded
-    return {
-        displayCards,
-        cards,
-        library
-    }
-}
 
 
-export default connect(mapStateToProps, { getCards, setCards })(Cards);
+export default connect(mapStateToProps, { setCards })(DisplayCards);
